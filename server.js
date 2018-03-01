@@ -20,8 +20,17 @@ app.get('/article-one',function(req,res)
 {
 res.send('article 1 is served');    
 });
+function hash(input,salt)
+{
+var hashed=crypto.pbkdf2Sync(input,salt,10000,512,sha512);
+return hashed.toString('hex');
+}
+app.get('/hash/:input',function(req,res))
 
+var hashedString=hash(req,params,input,'thisis-string');
+res.send(hashedString);
 
+})
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
