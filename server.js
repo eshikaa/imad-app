@@ -20,6 +20,14 @@ app.get('/article-one',function(req,res)
 {
 res.send('article 1 is served');    
 });
+app.get('/article-two',function(req,res)
+{
+res.send('article 2 is served');    
+});
+app.get('/article-three',function(req,res)
+{
+res.send('article 3 is served');    
+});
 function hash(input,salt)
 {
 var hashed=crypto.pbkdf2Sync(input,salt,10000,512,sha512);
