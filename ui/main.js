@@ -1,9 +1,16 @@
-console.log('Loaded!');
-//change name
-var element=document.getElementById('main text')
-element.innerHTML='new value';
-//move image
-var img=document.getElementById('madi')
-img.OnClick=function(){
-    img.style.marginLeft='100px';
+//conter code
+var button=document.getElementById('counter');
+
+button.onclick=function()
+{
+//make req to conter endpoint
+
+var request=new XMLHttpRequest();
+//capture resp and store into varable
+request.onreadystatechange=function(){
+if(request.readystate===XMLHttpRequest.DONE)
+{
+    if (request.status===200)
+{
+    
 }
